@@ -1,0 +1,59 @@
+<html>
+	<head>
+		<title>Event Handling</title>
+		
+		<style>
+			#main{
+				border: 2px solid black;
+				width: 300px;
+				height: 300px;
+			}
+			
+			.demo{
+				background-color: dodgerblue;
+			}
+			
+			#btn{
+				margin: 5px;
+			}
+		</style>
+	</head>
+	
+	<body>
+		<button id="btn" onclick="addPara()">add para</button><button id="btn"onclick="rmPara()">remove para</button>
+		<button id="btn" onclick="addStyle()">add style</button><button id="btn" onclick="rmStyle()">remove style</button>
+		<button id="btn" onclick="clearDiv()">clear</button>
+		
+		<div id='main'></div>
+		
+		
+		
+		<script>
+			var element = document.getElementById('main');
+			function addPara(){
+				var node = document.createElement('p');
+				node.innerHTML = 'This is a para';
+				node.style.backgroundColor = 'red';
+				element.appendChild(node);
+			}
+			
+			function rmPara(){
+				var node = element.childNodes[0];
+				console.log(element.childNodes[0]);
+				element.removeChild(node);
+			}
+			
+			function addStyle(){
+				element.setAttribute('class','demo');
+			}
+			
+			function rmStyle(){
+				element.removeAttribute('class');
+			}
+			
+			function clearDiv(){
+				element.innerHTML = '';
+			}
+		</script>
+	</body>
+</html>
